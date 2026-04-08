@@ -1,0 +1,48 @@
+import { User } from './../models/User';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { JwtRequest } from '../models/jwtRequest';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LoginService {
+
+  constructor(private http: HttpClient) {}
+
+  login(request: JwtRequest) {
+    return this.http.post('http://localhost:8082/login', request);
+  }
+  verificar() {
+    if (typeof window !== 'undefined' && typeof sessionStorage !== 'undefined') {
+      let token = sessionStorage.getItem('token');
+      return token != null;
+    }
+    return false; 
+  }
+
+  showRole() {
+    if (typeof window !== 'undefined' && typeof sessionStorage !== 'undefined') {
+      let token = sessionStorage.getItem('token');
+      if (!token) {
+        return null; 
+      }
+      const helper = new JwtHelperService();
+      const decodedToken = helper.decodeToken(token);
+      return decodedToken?.role;
+    }
+    return null; 
+  }
+  showName(){
+    let token = sessionStorage.getItem('token');
+    if (!token) {
+      return null;
+    }
+    const helper = new JwtHelperService();
+    const decodedToken = helper.decodeToken(token);
+    console.log(decodedToken);
+    return decodedToken?.sub;
+  }
+}

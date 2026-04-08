@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="title-container">
+    <h1>Lista de Usuarios</h1>
+  </div>
+  <div class="card-container">
+    <mat-card class="example-card" *ngFor="let element of dataSource.data">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{ element.userName }}</mat-card-title>
+          <mat-card-subtitle>{{ element.fullName }}</mat-card-subtitle>
+          <img mat-card-md-image src="https://img.freepik.com/vector-premium/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-humano_157943-15752.jpg" alt="Imagen de usuario">
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Email:</strong> {{ element.email }}</p>
+        <p><strong>DNI:</strong> {{ element.dni }}</p>
+      </mat-card-content>
+      <mat-card-actions *ngIf="isAdmin()">
+        <button mat-raised-button color="primary" [routerLink]="['ediciones', element.idUser]">
+          <mat-icon>edit</mat-icon> Editar
+        </button>
+        <button mat-raised-button color="warn" (click)="eliminar(element.idUser)">
+          <mat-icon>delete_sweep</mat-icon> Eliminar
+        </button>
+      </mat-card-actions>
+      <br/>
+    </mat-card>
+    <br/>
+  </div>
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons aria-label="Select page of periodic elements"></mat-paginator>
+</div>

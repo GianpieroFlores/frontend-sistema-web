@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="title-container">
+    <h1>Lista de Opciones de Pago</h1>
+  </div>
+  <div class="card-container">
+    <mat-card class="example-card" *ngFor="let element of dataSource.data">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{ element.descriptionOptionPay }}</mat-card-title>
+          <mat-card-subtitle>{{ element.typeOptionPay }}</mat-card-subtitle>
+          <img src="https://sistemahost.com/images/metodos-pago.png" alt="Card Logo" width="200" height="75">
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>ID:</strong> {{ element.idOptionPay }}</p>
+      </mat-card-content>
+      <mat-card-actions *ngIf="isAdmin() || isExperto()">
+        <button mat-raised-button color="primary" [routerLink]="['ediciones', element.idOptionPay]">
+          <mat-icon>edit</mat-icon> Editar
+        </button>
+        <button mat-raised-button color="warn" (click)="eliminar(element.idOptionPay)">
+          <mat-icon>delete_sweep</mat-icon> Eliminar
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons aria-label="Select page of periodic elements"></mat-paginator>
+</div>

@@ -1,0 +1,108 @@
+/* General sidenav styling */
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: #c4f7ba;
+}
+
+.sidenav .logo {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.sidenav .logo img {
+  width: 150px;
+  height: auto;
+  cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+}
+
+.sidenav .logo img:hover {
+  opacity: 0.5; /* Efecto hover (opcional, puedes cambiarlo según tu preferencia) */
+}
+
+.sidenav .menu-items {
+  padding: 10px;
+}
+
+.sidenav .menu-items a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+}
+
+.sidenav .menu-items a mat-icon {
+  margin-right: 10px;
+}
+
+.sidenav .menu-items a:hover {
+  background-color: #575757;
+  color: white;
+}
+
+.sidenav .submenu {
+  padding-left: 20px;
+}
+
+.sidenav .submenu a {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.sidenav .submenu a mat-icon {
+  margin-right: 10px;
+}
+
+/* Toolbar styling */
+.responsive-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #c4f7ba;
+  padding: 10px;
+}
+
+.toolbar-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-logo .logo-img {
+  height: 40px;
+  margin-right: 10px;
+  cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+}
+
+.toolbar-logo .logo-img:hover {
+  opacity: 0.8; /* Efecto hover (opcional, puedes cambiarlo según tu preferencia) */
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+/* Hide toolbar buttons on small screens */
+@media (max-width: 600px) {
+  .toolbar-buttons {
+    display: none;
+  }
+}
+
+/* Show toolbar buttons on larger screens */
+@media (min-width: 601px) {
+  .toolbar-menu {
+    display: none;
+  }
+}
