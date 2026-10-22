@@ -1,27 +1,54 @@
-# Qalikay
+# Qalikay – Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+Aplicación web desarrollada como proyecto universitario, orientada a la gestión de productos, recetas tradicionales y ventas. Cuenta con una interfaz para que los usuarios puedan acceder a las distintas funcionalidades del sistema según su rol.
 
-## Development server
+Este repositorio contiene el frontend del proyecto, desarrollado con Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
 
-## Code scaffolding
+- Inicio de sesión y acceso según roles de usuario.
+- Registro, consulta y edición de productos.
+- Gestión de recetas y comentarios.
+- Registro de ventas y opciones de pago.
+- Administración de usuarios y roles.
+- Visualización de reportes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologías utilizadas
 
-## Build
+- **Angular 18:** desarrollo del frontend.
+- **TypeScript:** lógica de los componentes y servicios.
+- **HTML y CSS:** estructura y estilos de las interfaces.
+- **Angular Material:** componentes de interfaz.
+- **Chart.js:** visualización de gráficos.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Instalación y ejecución
 
-## Running unit tests
+Para ejecutar el proyecto localmente, es necesario tener instalado Node.js y npm.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clonar el repositorio:
 
-## Running end-to-end tests
+   `git clone https://github.com/GianpieroFlores/frontend-sistema-web.git`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Ingresar a la carpeta:
 
-## Further help
+   `cd frontend-sistema-web`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. Instalar las dependencias:
+
+   `npm install`
+
+4. Iniciar el servidor de desarrollo:
+
+   `npm start`
+
+5. Abrir en el navegador:
+
+   `http://localhost:4200`
+
+## Backend
+
+El frontend se conecta a una API REST desarrollada con Java y Spring Boot. La dirección de la API se configura en `src/app/environments/environment.ts`.
+
+El código del backend se encuentra en el siguiente repositorio:
+
+[Qalikay – Backend](https://github.com/GianpieroFlores/backend-sistema-web)
